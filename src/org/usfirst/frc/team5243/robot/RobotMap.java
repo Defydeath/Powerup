@@ -27,4 +27,13 @@ public class RobotMap {
 	public static final int frontRight = 2;
 	public static final int backLeft = 1;
 	public static final int backRight = 3;
+	public static final int comp = 4;
+	//place holders for climb subsystem
+	public static int solenoidr = 5;
+	public static int solenoidf = 4;
+	
+	
+	public static boolean pOn = true; //pressure on
+	public static boolean revTog = true; //reverse toggle
+	
 }

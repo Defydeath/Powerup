@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team5243.robot;
 
+import org.usfirst.frc.team5243.robot.commands.PneumaticDirectionToggle;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -45,14 +47,19 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	Joystick rightstick;
 	Joystick leftstick;
+	Button climb;
+	Button notClimb;
 	
 	//Button switchToPlayback;
-	Button recordation;
-	Button playbackation;
-	
+		
 	public void init() {
 		rightstick = new Joystick(1);
 		leftstick = new Joystick(0);
+		climb = new JoystickButton(leftstick, 4);
+		notClimb = new JoystickButton(leftstick, 3);
+		
+		climb.whenPressed(new PneumaticDirectionToggle(true));
+		notClimb.whenPressed(new PneumaticDirectionToggle(false));
 	}
 	
 	public Joystick getLeftStick() {
@@ -62,4 +69,6 @@ public class OI {
 	public Joystick getRightStick() {
 		return rightstick;
 	}
+
+	
 }

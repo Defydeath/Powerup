@@ -1,6 +1,5 @@
 package org.usfirst.frc.team5243.robot.subsystems;
 
-import org.usfirst.frc.team5243.robot.OI;
 import org.usfirst.frc.team5243.robot.RobotMap;
 import org.usfirst.frc.team5243.robot.commands.ControlPSICommand;
 
@@ -22,7 +21,7 @@ public class ClimbSubsystem extends Subsystem {
     	setDefaultCommand(new ControlPSICommand());
     }
     public ClimbSubsystem() {
-    	ds = new DoubleSolenoid(RobotMap.solenoidf, RobotMap.solenoidr);
+    	ds = new DoubleSolenoid(RobotMap.climbsolenoidf, RobotMap.climbsolenoidr);
     	enabled = c.enabled();
     	//pressureSwitch = c.getPressureSwitchValue(); //method for the boolean to check if the pressure is low
     	c = new Compressor(RobotMap.comp);
@@ -34,7 +33,6 @@ public class ClimbSubsystem extends Subsystem {
     }
     public void controlPSI() {
     	c.setClosedLoopControl(true);
-    	
     }
     public void reverseToggle() {
     	ds.set(RobotMap.revTog ? DoubleSolenoid.Value.kForward : DoubleSolenoid.Value.kReverse);

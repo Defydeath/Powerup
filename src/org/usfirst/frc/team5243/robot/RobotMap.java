@@ -28,9 +28,13 @@ public class RobotMap {
 	public static final int backLeft = 1;
 	public static final int backRight = 3;
 	public static final int comp = 4;
+	public static final int cubecomp = 10;
 	//place holders for climb subsystem
-	public static int solenoidr = 5;
-	public static int solenoidf = 4;
+	public static final int climbsolenoidr = 5;
+	public static final int climbsolenoidf = 6;
+	public static final int pushr = 7;
+	public static final int pcubesolenoidf = 8;
+	public static final int pcubesolendoidr = 9;
 	
 	
 	public static boolean pOn = true; //pressure on

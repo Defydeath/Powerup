@@ -49,6 +49,7 @@ public class OI {
 	Joystick leftstick;
 	Button climb;
 	Button notClimb;
+	Button extend;
 	
 	//Button switchToPlayback;
 		
@@ -57,6 +58,7 @@ public class OI {
 		leftstick = new Joystick(0);
 		climb = new JoystickButton(leftstick, 4);
 		notClimb = new JoystickButton(leftstick, 3);
+		extend = new JoystickButton(leftstick, 2);
 		
 		climb.whenPressed(new PneumaticDirectionToggle(true));
 		notClimb.whenPressed(new PneumaticDirectionToggle(false));

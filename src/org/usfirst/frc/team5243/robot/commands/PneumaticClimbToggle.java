@@ -9,11 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PneumaticClimbToggle extends Command {
 	ClimbSubsystem climbSubsystem;
-	boolean s; //start
-    public PneumaticClimbToggle(boolean f) {
+    public PneumaticClimbToggle() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	s = f;
     	climbSubsystem = new ClimbSubsystem();
     	requires(climbSubsystem);
     }
@@ -24,7 +22,6 @@ public class PneumaticClimbToggle extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(s)
     	climbSubsystem.toggle();
     }
 

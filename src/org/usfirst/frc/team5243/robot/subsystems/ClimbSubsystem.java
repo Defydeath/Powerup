@@ -4,7 +4,6 @@ import org.usfirst.frc.team5243.robot.RobotMap;
 import org.usfirst.frc.team5243.robot.commands.ControlPSICommand;
 
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 

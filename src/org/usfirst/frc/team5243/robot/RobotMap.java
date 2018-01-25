@@ -36,7 +36,8 @@ public class RobotMap {
 	public static final int pcubesolenoidf = 8;
 	public static final int pcubesolendoidr = 9;
 	
-	
+	public static boolean pushOn = true; //pressure on toggle for cubpinsubsystem
+	public static boolean dirTog = true; //Reverse toggle for cubpinsubsystem
 	public static boolean pOn = true; //pressure on
 	public static boolean revTog = true; //reverse toggle
 	

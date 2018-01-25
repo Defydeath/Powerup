@@ -57,8 +57,8 @@ public class OI {
 		climb = new JoystickButton(leftstick, 4);
 		notClimb = new JoystickButton(leftstick, 3);
 				
-		climb.whenPressed(new PneumaticClimbToggle(true));
-		notClimb.whenPressed(new PneumaticClimbToggle(false));
+		climb.whenPressed(new PneumaticClimbToggle());
+		notClimb.whenPressed(new PneumaticClimbToggle());
 	}
 	
 	public Joystick getLeftStick() {

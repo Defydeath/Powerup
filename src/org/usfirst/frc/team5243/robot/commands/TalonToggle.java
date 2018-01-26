@@ -1,20 +1,21 @@
 package org.usfirst.frc.team5243.robot.commands;
 
-import org.usfirst.frc.team5243.robot.Robot;
-import org.usfirst.frc.team5243.robot.subsystems.PistonSubsystem;
+import org.usfirst.frc.team5243.robot.subsystems.ClimbSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ControlPSICommand extends Command {
-	PistonSubsystem pistonSubsystem;
-    public ControlPSICommand() {
+public class TalonToggle extends Command {
+	ClimbSubsystem climbSubsystem;
+	boolean on;
+	public TalonToggle(boolean a) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	pistonSubsystem = Robot.pistonSubsystem;
-    	requires(pistonSubsystem);
+		climbSubsystem = new ClimbSubsystem();
+		on = a;
+		requires(climbSubsystem);
     }
 
     // Called just before this Command runs the first time
@@ -23,7 +24,10 @@ public class ControlPSICommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	pistonSubsystem.controlPSI();
+    	if(on)
+    		climbSubsystem.start();
+    	else
+    		climbSubsystem.stop();
     }
 
     // Make this return true when this Command no longer needs to run execute()

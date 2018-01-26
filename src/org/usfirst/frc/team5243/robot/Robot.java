@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team5243.robot;
 
+import org.usfirst.frc.team5243.robot.subsystems.PistonSubsystem;
 import org.usfirst.frc.team5243.robot.subsystems.ClimbSubsystem;
 import org.usfirst.frc.team5243.robot.subsystems.CubePinSubsystem;
 import org.usfirst.frc.team5243.robot.subsystems.DriveSubsystem;
@@ -28,8 +29,9 @@ public class Robot extends TimedRobot {
 	public static OI oi;
 	
 	public static DriveSubsystem driveSubsystem = new DriveSubsystem();
-	public static ClimbSubsystem climbSubsystem = new ClimbSubsystem();
+	public static PistonSubsystem pistonSubsystem = new PistonSubsystem();
 	public static CubePinSubsystem cubePinSubsystem = new CubePinSubsystem();
+	public static ClimbSubsystem climbSubsystem = new ClimbSubsystem();
 
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 

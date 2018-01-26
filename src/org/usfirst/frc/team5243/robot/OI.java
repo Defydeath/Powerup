@@ -7,7 +7,7 @@
 
 package org.usfirst.frc.team5243.robot;
 
-import org.usfirst.frc.team5243.robot.commands.PneumaticClimbToggle;
+import org.usfirst.frc.team5243.robot.commands.PistonToggle;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -47,18 +47,15 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	Joystick rightstick;
 	Joystick leftstick;
-	Button climb;
-	Button notClimb;
+	Button piston;
 	//Button switchToPlayback;
 		
 	public void init() {
 		rightstick = new Joystick(1);
 		leftstick = new Joystick(0);
-		climb = new JoystickButton(leftstick, 4);
-		notClimb = new JoystickButton(leftstick, 3);
-				
-		climb.whenPressed(new PneumaticClimbToggle());
-		notClimb.whenPressed(new PneumaticClimbToggle());
+		piston = new JoystickButton(leftstick, 4);
+						
+		piston.whenPressed(new PistonToggle());
 	}
 	
 	public Joystick getLeftStick() {

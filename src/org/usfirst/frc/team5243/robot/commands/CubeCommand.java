@@ -1,29 +1,30 @@
 package org.usfirst.frc.team5243.robot.commands;
 
-import org.usfirst.frc.team5243.robot.Robot;
-import org.usfirst.frc.team5243.robot.subsystems.PistonSubsystem;
+import org.usfirst.frc.team5243.robot.subsystems.CubePinSubsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ControlPSICommand extends Command {
-	PistonSubsystem pistonSubsystem;
-    public ControlPSICommand() {
+public class CubeCommand extends Command {
+	
+	CubePinSubsystem cubePinSubsystem;
+    	
+	public CubeCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	pistonSubsystem = Robot.pistonSubsystem;
-    	requires(pistonSubsystem);
+		cubePinSubsystem = new CubePinSubsystem();
+		requires(cubePinSubsystem);
     }
-
+    
     // Called just before this Command runs the first time
     protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	pistonSubsystem.controlPSI();
+    	cubePinSubsystem.toggleOn();
     }
 
     // Make this return true when this Command no longer needs to run execute()

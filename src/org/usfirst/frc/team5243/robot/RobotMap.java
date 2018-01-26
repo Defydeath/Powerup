@@ -27,14 +27,20 @@ public class RobotMap {
 	public static final int frontRight = 2;
 	public static final int backLeft = 1;
 	public static final int backRight = 3;
+	//place holders for piston subsystem
 	public static final int comp = 4;
-	public static final int cubecomp = 10;
-	//place holders for climb subsystem
-	public static final int climbsolenoidr = 5;
-	public static final int climbsolenoidf = 6;
+	public static final int pistonsolenoidr = 5;
+	public static final int pistonsolenoidf = 6;
 	public static final int pushr = 7;
+	//place holders for cube subsystem
 	public static final int pcubesolenoidf = 8;
 	public static final int pcubesolendoidr = 9;
+	public static final int cubecomp = 10;
+	//place holders for climb subsystem
+	public static final int talon1 = 11;
+	public static final int talon2 = 12;
+	
+	
 	
 	public static boolean pushOn = true; //pressure on toggle for cubpinsubsystem
 	public static boolean dirTog = true; //Reverse toggle for cubpinsubsystem

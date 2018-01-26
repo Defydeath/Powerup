@@ -7,36 +7,38 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-
 /**
  *
  */
 public class PistonSubsystem extends Subsystem {
 	Solenoid ds;
 	Compressor c;
-	//boolean pOn; //pressure On 
+	// boolean pOn; //pressure On
 	boolean enabled;
-	//boolean pressureSwitch;  -Checks if the pressure is low. May need this later 
-    public void initDefaultCommand() {
-    	setDefaultCommand(new ControlPSICommand());
-    }
-    public PistonSubsystem() {
-    	ds = new Solenoid(RobotMap.pistonsolenoidf, RobotMap.pistonsolenoidr);
-    	enabled = c.enabled();
-    	//pressureSwitch = c.getPressureSwitchValue(); //method for the boolean to check if the pressure is low
-    	c = new Compressor(RobotMap.comp);
-    }
-    public void toggle() {
-    	if(RobotMap.pOn) {
-    		ds.set(false);
-    	}
-    	else {
-    		ds.set(true);
-    	}
-    	RobotMap.pOn = !RobotMap.pOn;
-    }
-    public void controlPSI() {
-    	c.setClosedLoopControl(true);
-    }    
-}
 
+	// boolean pressureSwitch; -Checks if the pressure is low. May need this later
+	public void initDefaultCommand() {
+		setDefaultCommand(new ControlPSICommand());
+	}
+
+	public PistonSubsystem() {
+		ds = new Solenoid(RobotMap.pistonsolenoidf, RobotMap.pistonsolenoidr);
+		enabled = c.enabled();
+		// pressureSwitch = c.getPressureSwitchValue(); //method for the boolean to
+		// check if the pressure is low
+		c = new Compressor(RobotMap.comp);
+	}
+
+	public void toggle() {
+		if (RobotMap.pOn) {
+			ds.set(false);
+		} else {
+			ds.set(true);
+		}
+		RobotMap.pOn = !RobotMap.pOn;
+	}
+
+	public void controlPSI() {
+		c.setClosedLoopControl(true);
+	}
+}

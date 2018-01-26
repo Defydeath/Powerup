@@ -14,11 +14,12 @@ public class ClimbSubsystem extends Subsystem {
     // here. Call these from Commands.
 	CANTalon t1;
 	CANTalon t2;
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-    	setDefaultCommand(new TalonToggle(true));
-    }
+
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		// setDefaultCommand(new MySpecialCommand());
+		setDefaultCommand(new TalonToggle());
+	}
     public ClimbSubsystem() {
     	t1 = new CANTalon(RobotMap.talon1);
     	t2 = new CANTalon(RobotMap.talon2);

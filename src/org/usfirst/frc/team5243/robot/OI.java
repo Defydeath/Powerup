@@ -7,7 +7,9 @@
 
 package org.usfirst.frc.team5243.robot;
 
+import org.usfirst.frc.team5243.robot.commands.ClimbDirectionCommand;
 import org.usfirst.frc.team5243.robot.commands.PistonToggle;
+import org.usfirst.frc.team5243.robot.commands.TalonToggle;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -48,13 +50,21 @@ public class OI {
 	Joystick rightstick;
 	Joystick leftstick;
 	Button piston;
-	//Button switchToPlayback;
-		
+	Button talup;
+	Button taldwn;
+	Button talon;
+	// Button switchToPlayback;
+
 	public void init() {
 		rightstick = new Joystick(1);
 		leftstick = new Joystick(0);
 		piston = new JoystickButton(leftstick, 4);
-						
+		talup = new JoystickButton(leftstick, 2);
+		taldwn = new JoystickButton(leftstick, 3);
+		talon = new JoystickButton(rightstick, 0);
+		talon.whenPressed(new TalonToggle());
+		talup.whileHeld(new ClimbDirectionCommand(true));
+		taldwn.whileHeld(new ClimbDirectionCommand(false));
 		piston.whenPressed(new PistonToggle());
 	}
 	
